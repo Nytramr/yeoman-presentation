@@ -37,24 +37,76 @@ html
           .bullet.inline(style="width:17%")
             img(src="images/yeoman-logo.png")
 
-      section#run-generator
+      section
         h1 Let's start with this
         pre
           code.language-javascript.
             $ npm install -g generator-generator
             $ yo generator
-            
-      section#run-generator
+
+      section
         .image
           img(src="images/yeoman-generator-run.png")
-          
-      section#run-generator
+      
+      section
+        h2 In order to execute the generator 
+        pre
+          code.language-javascript.
+            $ yo yeoman-test-generator
+
+      section
+        h2 Generated Tree
         .image
           img(src="images/generator-tree.png")
-          
-      section#run-generator
+
+      section
+        h2 App folder
         .image
           img(src="images/generator-tree-app.png")
+
+      section
+        h2 Index File 
+        .image
+          img(src="images/generator-tree-index.png")
+
+      section
+        h2 Templates folder
+        .image
+          img(src="images/generator-tree-templates.png")
+
+      section
+        .bullet
+          h1 Adding subgenerators
+          pre
+            code.language-javascript.
+              $ yo generator:subgenerator name
+        .bullet
+          h2 In order to execute the subgenerator 
+          pre
+            code.language-javascript.
+              $ yo yeoman-test-generator:name
+              
+       section
+        h1 Generators are npm modules 
+        pre
+          code.language-javascript.
+            var generators = require('yeoman-generator');
+            
+            module.exports = generators.Base.extend({
+              //your code here
+            });
+          
+      section
+        h2 Priority Methods
+        ol
+          li initializing 
+          li prompting
+          li configuring
+          li default
+          li writing
+          li conflicts
+          li install
+          li end
 
       script(src='build/build.js')
           

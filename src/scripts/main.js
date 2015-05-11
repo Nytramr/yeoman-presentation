@@ -19,7 +19,7 @@ bespoke.from('article', [
   simple(),
   keys(),
   touch(),
-  bullets('li, .bullet'),
+  bullets('.bullet'),
   backdrop(),
   scale(),
   hash(),
