@@ -85,8 +85,12 @@ html
           pre
             code.language-javascript.
               $ yo yeoman-test-generator:name
-              
-       section
+      section
+        h2 Name Subgenerator folder
+        .image
+          img(src="images/subgenerator-tree.png")
+
+      section
         h1 Generators are npm modules 
         pre
           code.language-javascript.
@@ -95,18 +99,84 @@ html
             module.exports = generators.Base.extend({
               //your code here
             });
-          
+ 
       section
-        h2 Priority Methods
+        h1 Constructor 
+        pre.small-code
+          code.language-javascript.
+            module.exports = generators.Base.extend({
+              // The name `constructor` is important here
+              constructor: function () {
+                // Calling the super constructor is important so our generator is correctly set up
+                generators.Base.apply(this, arguments);
+            
+                // Next, add your custom code
+                this.option('coffee'); // This method adds support for a `--coffee` flag
+                
+                // This makes `appname` a required argument.
+                this.argument('appname', { type: String, required: true });
+              }
+            });
+
+      section.priority-methods
+        h1 Priority Methods
         ol
-          li initializing 
-          li prompting
-          li configuring
-          li default
-          li writing
-          li conflicts
-          li install
-          li end
+          li.emphasize initializing 
+          li.emphasize prompting
+          li.emphasize configuring
+          li.emphasize default
+          li.emphasize writing
+          li.emphasize conflicts
+          li.emphasize install
+          li.emphasize end
+          
+      section.priority-methods
+        h1 Priority Methods
+        ol
+          li.emphasize initializing 
+          li.normal prompting
+          li.normal configuring
+          li.normal default
+          li.normal writing
+          li.normal conflicts
+          li.normal install
+          li.normal end
+
+      section.priority-methods
+        h1 Priority Methods
+        ol
+          li.normal initializing 
+          li.emphasize prompting
+          li.normal configuring
+          li.normal default
+          li.normal writing
+          li.normal conflicts
+          li.normal install
+          li.normal end
+
+      section.priority-methods
+        h1 Priority Methods
+        ol
+          li.normal initializing 
+          li.normal prompting
+          li.normal configuring
+          li.normal default
+          li.emphasize writing
+          li.normal conflicts
+          li.normal install
+          li.normal end
+
+      section.priority-methods
+        h1 Priority Methods
+        ol
+          li.normal initializing 
+          li.normal prompting
+          li.normal configuring
+          li.normal default
+          li.normal writing
+          li.normal conflicts
+          li.normal install
+          li.normal end
 
       script(src='build/build.js')
           
