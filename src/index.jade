@@ -15,7 +15,11 @@ html
         h1 Making Generators 
           span with
         #yeoman-logo.centered
-          img(src="images/main-yeoman-logo.png")
+          img(src="images/yeoman-logo.png")
+
+      section
+        h1 Why a generator?
+        //-p It is more than a complicated boilerplate generator
 
       section
         h1 What's Yeoman?
@@ -27,18 +31,13 @@ html
         p.bullet Modify Code
         p.bullet Anything you could do to a file system using node
 
-      section#need
-        h1.bullet What you will need
-        .centered
-          .bullet.inline(style="width:36%")
-            img(src="images/nodejs-logo.png")
-          .bullet.inline(style="width:16%")
-            img(src="images/npm-logo.png")
-          .bullet.inline(style="width:17%")
-            img(src="images/yeoman-logo.png")
+      section
+        h1.bullet How did Yeoman help us?
+        p.bullet Generates files
+        p.bullet Takes care of repetitive code
+        p.bullet Adds pieces of code in existing files
 
       section
-        h1 Let's start with this
         pre
           code.language-javascript.
             $ npm install -g generator-generator
@@ -47,12 +46,6 @@ html
       section
         .image
           img(src="images/yeoman-generator-run.png")
-      
-      section
-        h2 In order to execute the generator 
-        pre
-          code.language-javascript.
-            $ yo yeoman-test-generator
 
       section
         h2 Generated Tree
@@ -60,126 +53,191 @@ html
           img(src="images/generator-tree.png")
 
       section
-        h2 App folder
-        .image
-          img(src="images/generator-tree-app.png")
+        h1 In order to execute the generator 
+        pre
+          code.language-javascript.
+            $ yo yeoman-test-generator
 
       section
-        h2 Index File 
-        .image
-          img(src="images/generator-tree-index.png")
+        h1 Adding subgenerators
+        pre
+          code.language-javascript.
+            $ yo generator:subgenerator name
 
-      section
-        h2 Templates folder
-        .image
-          img(src="images/generator-tree-templates.png")
-
-      section
-        .bullet
-          h1 Adding subgenerators
-          pre
-            code.language-javascript.
-              $ yo generator:subgenerator name
-        .bullet
-          h2 In order to execute the subgenerator 
-          pre
-            code.language-javascript.
-              $ yo yeoman-test-generator:name
       section
         h2 Name Subgenerator folder
         .image
           img(src="images/subgenerator-tree.png")
 
       section
-        h1 Generators are npm modules 
+        h1 In order to execute the subgenerator 
         pre
           code.language-javascript.
-            var generators = require('yeoman-generator');
-            
-            module.exports = generators.Base.extend({
-              //your code here
-            });
- 
-      section
-        h1 Constructor 
-        pre.small-code
-          code.language-javascript.
-            module.exports = generators.Base.extend({
-              // The name `constructor` is important here
-              constructor: function () {
-                // Calling the super constructor is important so our generator is correctly set up
-                generators.Base.apply(this, arguments);
-            
-                // Next, add your custom code
-                this.option('coffee'); // This method adds support for a `--coffee` flag
-                
-                // This makes `appname` a required argument.
-                this.argument('appname', { type: String, required: true });
-              }
-            });
-
-      section.priority-methods
-        h1 Priority Methods
-        ol
-          li.emphasize initializing 
-          li.emphasize prompting
-          li.emphasize configuring
-          li.emphasize default
-          li.emphasize writing
-          li.emphasize conflicts
-          li.emphasize install
-          li.emphasize end
-          
-      section.priority-methods
-        h1 Priority Methods
-        ol
-          li.emphasize initializing 
-          li.normal prompting
-          li.normal configuring
-          li.normal default
-          li.normal writing
-          li.normal conflicts
-          li.normal install
-          li.normal end
+            $ yo yeoman-test-generator:name
 
       section
+        h1 Questions?
         
+      section
+        h1 Thanks!!
+        #yeoman-logo.centered
+          img(src="images/main-yeoman-logo.png")
+          
+      script(src='build/build.js')
 
-      section.priority-methods
-        h1 Priority Methods
-        ol
-          li.normal initializing 
-          li.emphasize prompting
-          li.normal configuring
-          li.normal default
-          li.normal writing
-          li.normal conflicts
-          li.normal install
-          li.normal end
-
-      section.priority-methods
-        h1 Priority Methods
-        ol
-          li.normal initializing 
-          li.normal prompting
-          li.normal configuring
-          li.normal default
-          li.emphasize writing
-          li.normal conflicts
-          li.normal install
-          li.normal end
-
-      section.priority-methods
-        h1 Priority Methods
-        ol
-          li.normal initializing 
-          li.normal prompting
-          li.normal configuring
-          li.normal default
-          li.normal writing
-          li.normal conflicts
-          li.normal install
-          li.normal end
+//-      section#need
+//-        h1.bullet What you will need
+//-        .centered
+//-          .bullet.inline(style="width:36%")
+//-            img(src="images/nodejs-logo.png")
+//-          .bullet.inline(style="width:16%")
+//-            img(src="images/npm-logo.png")
+//-          .bullet.inline(style="width:17%")
+//-            img(src="images/yeoman-logo.png")
+//-
+//-      section
+//-        h1 Let's start with this
+//-        pre
+//-          code.language-javascript.
+//-            $ npm install -g generator-generator
+//-            $ yo generator
+//-
+//-      section
+//-        .image
+//-          img(src="images/yeoman-generator-run.png")
+//-      
+//-      section
+//-        h2 In order to execute the generator 
+//-        pre
+//-          code.language-javascript.
+//-            $ yo yeoman-test-generator
+//-
+//-      section
+//-        h2 Generated Tree
+//-        .image
+//-          img(src="images/generator-tree.png")
+//-
+//-      section
+//-        h2 App folder
+//-        .image
+//-          img(src="images/generator-tree-app.png")
+//-
+//-      section
+//-        h2 Index File 
+//-        .image
+//-          img(src="images/generator-tree-index.png")
+//-
+//-      section
+//-        h2 Templates folder
+//-        .image
+//-          img(src="images/generator-tree-templates.png")
+//-
+//-      section
+//-        .bullet
+//-          h1 Adding subgenerators
+//-          pre
+//-            code.language-javascript.
+//-              $ yo generator:subgenerator name
+//-        .bullet
+//-          h2 In order to execute the subgenerator 
+//-          pre
+//-            code.language-javascript.
+//-              $ yo yeoman-test-generator:name
+//-      section
+//-        h2 Name Subgenerator folder
+//-        .image
+//-          img(src="images/subgenerator-tree.png")
+//-
+//-      section
+//-        h1 Generators are npm modules 
+//-        pre
+//-          code.language-javascript.
+//-            var generators = require('yeoman-generator');
+//-            
+//-            module.exports = generators.Base.extend({
+//-              //your code here
+//-            });
+//- 
+//-      section
+//-        h1 Constructor 
+//-        pre.small-code
+//-          code.language-javascript.
+//-            module.exports = generators.Base.extend({
+//-              // The name `constructor` is important here
+//-              constructor: function () {
+//-                // Calling the super constructor is important so our generator is correctly set up
+//-                generators.Base.apply(this, arguments);
+//-            
+//-                // Next, add your custom code
+//-                this.option('coffee'); // This method adds support for a `--coffee` flag
+//-                
+//-                // This makes `appname` a required argument.
+//-                this.argument('appname', { type: String, required: true });
+//-              }
+//-            });
+//-
+//-      section.priority-methods
+//-        h1 Priority Methods
+//-        ol
+//-          li.emphasize initializing 
+//-          li.emphasize prompting
+//-          li.emphasize configuring
+//-          li.emphasize default
+//-          li.emphasize writing
+//-          li.emphasize conflicts
+//-          li.emphasize install
+//-          li.emphasize end
+//-          
+//-      section.priority-methods
+//-        h1 Priority Methods
+//-        ol
+//-          li.emphasize initializing 
+//-          li.normal prompting
+//-          li.normal configuring
+//-          li.normal default
+//-          li.normal writing
+//-          li.normal conflicts
+//-          li.normal install
+//-          li.normal end
+//-
+//-      //section
+//-        
+//-
+//-      section.priority-methods
+//-        h1 Priority Methods
+//-        ol
+//-          li.normal initializing 
+//-          li.emphasize prompting
+//-          li.normal configuring
+//-          li.normal default
+//-          li.normal writing
+//-          li.normal conflicts
+//-          li.normal install
+//-          li.normal end
+//-
+//-      section.priority-methods
+//-        h1 Priority Methods
+//-        ol
+//-          li.normal initializing 
+//-          li.normal prompting
+//-          li.normal configuring
+//-          li.normal default
+//-          li.emphasize writing
+//-          li.normal conflicts
+//-          li.normal install
+//-          li.normal end
+//-
+//-      section.priority-methods
+//-        h1 Priority Methods
+//-        ol
+//-          li.normal initializing 
+//-          li.normal prompting
+//-          li.normal configuring
+//-          li.normal default
+//-          li.normal writing
+//-          li.normal conflicts
+//-          li.normal install
+//-          li.normal end
 
       script(src='build/build.js')
           
