@@ -28,3 +28,8 @@ node_modules
 bower_components
 dist
 bespoke-theme-*
+
+#OSs
+.DS_Store
+
+

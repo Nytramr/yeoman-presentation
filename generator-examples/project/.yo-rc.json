@@ -1,0 +1,17 @@
+{
+  "generator-globant-reactjs-seed": {
+    "name": "project",
+    "ajaxLibrary": "npm-zepto",
+    "extras": {
+      "watch": true,
+      "server": true,
+      "unittest": true
+    },
+    "dispatcher": [
+      "VIEW_ACTION"
+    ],
+    "routeInitial": [],
+    "defaultRouteHandler": "",
+    "notFoundRouteHandler": ""
+  }
+}
